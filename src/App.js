@@ -2,8 +2,9 @@ import './App.css'
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <p>바부</p>
+      <p>똥꼬</p>
     </div>
   )
 }
