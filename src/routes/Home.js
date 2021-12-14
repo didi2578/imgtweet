@@ -21,6 +21,7 @@ const Home = ({ userObj }) => {
       collection(dbService, 'tweets'),
       orderBy('createdAt', 'desc')
     )
+
     onSnapshot(q, (snapshot) => {
       const tweetArr = snapshot.docs.map((doc) => ({
         id: doc.id,
