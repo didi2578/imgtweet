@@ -1,13 +1,17 @@
 import React, { useState } from 'react'
 import { doc, deleteDoc, updateDoc } from 'firebase/firestore'
-import { dbService } from 'myBase'
+import { deleteObject, ref } from 'firebase/storage'
+
+import { dbService, storageService } from 'myBase'
 
 const ImgTweet = ({ userObj, isOwner }) => {
   const [editing, setEditing] = useState(false)
   const [newTweet, setNewTweet] = useState(userObj.text)
+
   const onDeleteClick = async () => {
     if (window.confirm('삭제 하시겠습니까?')) {
       await deleteDoc(doc(dbService, `tweets/${userObj.id}`))
+      await deleteObject(ref(storageService, userObj.fileURL))
     }
   }
   const onSubmit = async (event) => {
@@ -44,6 +48,14 @@ const ImgTweet = ({ userObj, isOwner }) => {
       ) : (
         <>
           <h4>{userObj.text}</h4>
+          {userObj.fileURL && (
+            <img
+              src={userObj.fileURL}
+              alt={userObj.fileURL}
+              width="60px"
+              height="60px"
+            />
+          )}
           {isOwner && (
             <>
               <button onClick={toggleEditing}>수정</button>
