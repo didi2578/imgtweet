@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const NavBar = () => {
+const NavBar = ({ userObj }) => {
   return (
     <nav>
       <ul>
@@ -9,7 +9,7 @@ const NavBar = () => {
           <Link to="/">home</Link>
         </li>
         <li>
-          <Link to="/Profile">Profile</Link>
+          <Link to="/Profile">{userObj.displayName} Profile</Link>
         </li>
       </ul>
     </nav>

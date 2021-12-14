@@ -5,16 +5,20 @@ import Auth from 'routes/Auth'
 import Profile from 'routes/Profile'
 import NavBar from 'components/NavBar'
 
-const AppRouter = ({ isLoggedIn }) => {
+const AppRouter = ({ isLoggedIn, userObj }) => {
   return (
     <div>
       <Router>
-        {isLoggedIn && <NavBar />}
+        {isLoggedIn && <NavBar userObj={userObj} />}
         <Routes>
           {isLoggedIn ? (
             <>
-              <Route exact path="/" element={<Home />} />
-              <Route exact path="/profile" element={<Profile />} />
+              <Route exact path="/" element={<Home userObj={userObj} />} />
+              <Route
+                exact
+                path="/profile"
+                element={<Profile userObj={userObj} />}
+              />
             </>
           ) : (
             <Route exact path="/" element={<Auth />} />
