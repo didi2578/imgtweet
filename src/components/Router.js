@@ -4,6 +4,7 @@ import Home from 'routes/Home'
 import Auth from 'routes/Auth'
 import Profile from 'routes/Profile'
 import NavBar from 'components/NavBar'
+import MyTweets from 'routes/MyTweets'
 
 const AppRouter = ({ isLoggedIn, userObj, refreshUser }) => {
   return (
@@ -20,6 +21,11 @@ const AppRouter = ({ isLoggedIn, userObj, refreshUser }) => {
                 element={
                   <Profile userObj={userObj} refreshUser={refreshUser} />
                 }
+              />
+              <Route
+                exact
+                path="/mytweets"
+                element={<MyTweets userObj={userObj} />}
               />
             </>
           ) : (
