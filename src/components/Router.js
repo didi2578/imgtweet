@@ -4,8 +4,9 @@ import Home from 'routes/Home'
 import Auth from 'routes/Auth'
 import Profile from 'routes/Profile'
 import NavBar from 'components/NavBar'
+import MyTweets from 'routes/MyTweets'
 
-const AppRouter = ({ isLoggedIn, userObj }) => {
+const AppRouter = ({ isLoggedIn, userObj, refreshUser }) => {
   return (
     <div>
       <Router>
@@ -17,7 +18,14 @@ const AppRouter = ({ isLoggedIn, userObj }) => {
               <Route
                 exact
                 path="/profile"
-                element={<Profile userObj={userObj} />}
+                element={
+                  <Profile userObj={userObj} refreshUser={refreshUser} />
+                }
+              />
+              <Route
+                exact
+                path="/mytweets"
+                element={<MyTweets userObj={userObj} />}
               />
             </>
           ) : (

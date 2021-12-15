@@ -1,10 +1,9 @@
-import { authService, dbService } from 'myBase'
+import { authService } from 'myBase'
 import { useNavigate } from 'react-router-dom'
 import { updateProfile } from 'firebase/auth'
-import { collection, getDocs, query, where, orderBy } from 'firebase/firestore'
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
-const Profile = ({ userObj }) => {
+const Profile = ({ userObj, refreshUser }) => {
   const [newDisplayName, setNewDisplayName] = useState(userObj.displayName)
 
   let navigate = useNavigate()
@@ -12,23 +11,6 @@ const Profile = ({ userObj }) => {
     authService.signOut()
     navigate('/')
   }
-  const getMyTweets = useCallback(async () => {
-    const q = query(
-      collection(dbService, 'tweets'),
-      where('creatorId', '==', userObj.uid),
-      orderBy('createdAt', 'desc')
-    )
-
-    const querySnapshot = await getDocs(q)
-    console.log(
-      '왜안나옴..?',
-      querySnapshot.docs.map((doc) => doc.data())
-    )
-  }, [userObj])
-
-  useEffect(() => {
-    getMyTweets()
-  }, [getMyTweets])
 
   const onChange = (event) => {
     const {
@@ -39,9 +21,12 @@ const Profile = ({ userObj }) => {
 
   const onSubmit = async (event) => {
     event.preventDefault()
+
+    const user = authService.currentUser
     if (userObj.displayName !== newDisplayName) {
-      await updateProfile(userObj, { displayName: newDisplayName })
+      await updateProfile(user, { displayName: newDisplayName })
     }
+    refreshUser()
   }
 
   return (

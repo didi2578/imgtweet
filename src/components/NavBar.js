@@ -11,6 +11,9 @@ const NavBar = ({ userObj }) => {
         <li>
           <Link to="/Profile">{userObj.displayName} Profile</Link>
         </li>
+        <li>
+          <Link to="/mytweets">Mytweet</Link>
+        </li>
       </ul>
     </nav>
   )
