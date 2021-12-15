@@ -4,14 +4,15 @@ import { authService } from 'myBase'
 
 function App() {
   const [init, setInit] = useState(false)
-
   const [userObj, setUserObj] = useState(null)
+
   useEffect(() => {
     authService.onAuthStateChanged((user) => {
       if (user) {
         setUserObj({
           displayName: user.displayName,
           uid: user.uid,
+          photoURL: user.photoURL,
           updateProfile: (args) => user.updateProfile(args),
         })
       } else {
@@ -22,9 +23,11 @@ function App() {
   }, [])
   const refreshUser = () => {
     const user = authService.currentUser
+
     setUserObj({
       displayName: user.displayName,
       uid: user.uid,
+      photoURL: user.photoURL,
       updateProfile: (args) => user.updateProfile(args),
     })
   }

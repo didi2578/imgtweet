@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { doc, deleteDoc, updateDoc } from 'firebase/firestore'
 import { deleteObject, ref } from 'firebase/storage'
-
 import { dbService, storageService } from 'myBase'
 
 const ImgTweet = ({ userObj, isOwner }) => {
@@ -47,6 +46,8 @@ const ImgTweet = ({ userObj, isOwner }) => {
         </>
       ) : (
         <>
+          {/* <img src={userObj.profilePhoto} alt={userObj.nickName} /> */}
+          <h4>{userObj.nickName}</h4>
           <h4>{userObj.text}</h4>
           {userObj.fileURL && (
             <img

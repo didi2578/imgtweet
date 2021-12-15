@@ -20,6 +20,8 @@ const ImgTweetFactory = ({ userObj }) => {
       text: tweet,
       createdAt: Date.now(),
       creatorId: userObj.uid,
+      nickName: userObj.displayName,
+      profilePhoto: userObj.photoURL,
       fileURL,
     }
     await addDoc(collection(dbService, 'tweets'), tweetPost)
