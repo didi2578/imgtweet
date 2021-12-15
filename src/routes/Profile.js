@@ -4,7 +4,7 @@ import { updateProfile } from 'firebase/auth'
 import { collection, getDocs, query, where, orderBy } from 'firebase/firestore'
 import React, { useCallback, useEffect, useState } from 'react'
 
-const Profile = ({ userObj }) => {
+const Profile = ({ userObj, refreshUser }) => {
   const [newDisplayName, setNewDisplayName] = useState(userObj.displayName)
 
   let navigate = useNavigate()
@@ -38,10 +38,12 @@ const Profile = ({ userObj }) => {
   }
 
   const onSubmit = async (event) => {
+    const user = authService.currentUser
     event.preventDefault()
     if (userObj.displayName !== newDisplayName) {
-      await updateProfile(userObj, { displayName: newDisplayName })
+      await updateProfile(user, { displayName: newDisplayName })
     }
+    refreshUser()
   }
 
   return (

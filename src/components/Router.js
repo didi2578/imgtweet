@@ -5,7 +5,7 @@ import Auth from 'routes/Auth'
 import Profile from 'routes/Profile'
 import NavBar from 'components/NavBar'
 
-const AppRouter = ({ isLoggedIn, userObj }) => {
+const AppRouter = ({ isLoggedIn, userObj, refreshUser }) => {
   return (
     <div>
       <Router>
@@ -17,7 +17,9 @@ const AppRouter = ({ isLoggedIn, userObj }) => {
               <Route
                 exact
                 path="/profile"
-                element={<Profile userObj={userObj} />}
+                element={
+                  <Profile userObj={userObj} refreshUser={refreshUser} />
+                }
               />
             </>
           ) : (
