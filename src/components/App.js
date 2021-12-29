@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import GlobalStyle from 'styles/GlobalStyle'
 import AppRouter from 'components/Router'
 import { authService } from 'myBase'
 
@@ -13,6 +14,7 @@ function App() {
           displayName: user.displayName,
           uid: user.uid,
           photoURL: user.photoURL,
+          email: user.email.split('@')[0],
           updateProfile: (args) => user.updateProfile(args),
         })
       } else {
@@ -28,11 +30,14 @@ function App() {
       displayName: user.displayName,
       uid: user.uid,
       photoURL: user.photoURL,
+      email: user.email.split('@')[0],
       updateProfile: (args) => user.updateProfile(args),
     })
   }
+
   return (
     <>
+      <GlobalStyle />
       {init ? (
         <AppRouter
           refreshUser={refreshUser}
@@ -42,7 +47,6 @@ function App() {
       ) : (
         'Initializing,,,'
       )}
-      <footer>&copy; didi2578</footer>
     </>
   )
 }

@@ -21,7 +21,6 @@ const MyTweets = ({ userObj }) => {
   useEffect(() => {
     getMyTweets()
   }, [getMyTweets])
-  console.log(myTweets)
 
   return (
     <div>

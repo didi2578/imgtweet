@@ -12,7 +12,6 @@ const Home = ({ userObj }) => {
       collection(dbService, 'tweets'),
       orderBy('createdAt', 'desc')
     )
-
     onSnapshot(q, (snapshot) => {
       const tweetArr = snapshot.docs.map((doc) => ({
         id: doc.id,
@@ -23,9 +22,9 @@ const Home = ({ userObj }) => {
   }, [])
 
   return (
-    <div>
+    <div className="container">
       <ImgTweetFactory userObj={userObj} />
-      <div>
+      <div style={{ marginTop: 30 }}>
         {tweets.map((tweet) => (
           <ImgTweet
             key={tweet.id}
