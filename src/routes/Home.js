@@ -24,7 +24,7 @@ const Home = ({ userObj }) => {
   return (
     <div className="container">
       <ImgTweetFactory userObj={userObj} />
-      <div style={{ marginTop: 30 }}>
+      <div>
         {tweets.map((tweet) => (
           <ImgTweet
             key={tweet.id}

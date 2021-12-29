@@ -115,7 +115,7 @@ const Nweet = styled.div`
   }
   .profile {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     img {
       border-radius: 50%;
       width: 40px;
