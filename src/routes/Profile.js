@@ -87,12 +87,13 @@ const Profile = ({ userObj, refreshUser }) => {
             ) : (
               <FontAwesomeIcon icon={faUserCircle} size="3x" />
             )}
+            <p>{userObj.displayName}</p>
           </ProfileImg>
         )}
-        <label htmlFor="attach-file" className="factoryInput__label">
+        {/* <label htmlFor="attach-file" className="factoryInput__label">
           <span>Add photos</span>
           <FontAwesomeIcon icon={faPlus} />
-        </label>
+        </label> */}
         <input
           type="file"
           accept="image/*"
@@ -139,6 +140,10 @@ const ProfileForm = styled.form`
 `
 const ProfileImg = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  p {
+    margin-top: 10px;
+  }
 `
 export default Profile

@@ -10,18 +10,14 @@ const NavBar = ({ userObj }) => {
       <ul
         style={{
           display: 'flex',
-          justifyContent: 'center',
+          justifyContent: 'space-between',
           marginTop: 50,
+          marginBottom: 20,
           alignItems: 'center',
+          width: '54%',
         }}
       >
         <li>
-          <Link to="/" style={{ marginRight: 10 }}>
-            <FontAwesomeIcon icon={faTwitter} color={'#04AAFF'} size="2x" />
-          </Link>
-        </li>
-        <li>
-          {/* <Link to="/Profile">{userObj.displayName} Profile</Link> */}
           <Link
             to="/profile"
             style={{
@@ -38,6 +34,11 @@ const NavBar = ({ userObj }) => {
                 ? `${userObj.displayName}의 Profile`
                 : 'Profile'}
             </span> */}
+          </Link>
+        </li>
+        <li>
+          <Link to="/">
+            <FontAwesomeIcon icon={faTwitter} color={'#04AAFF'} size="2x" />
           </Link>
         </li>
       </ul>

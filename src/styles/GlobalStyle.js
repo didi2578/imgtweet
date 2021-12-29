@@ -134,15 +134,17 @@ form {
 }
 
 .factoryForm__attachment img {
-  height: 80px;
-  width: 80px;
-  border-radius: 40px;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom:10px;
 }
 
 .factoryForm__clear {
   color: #04aaff;
   cursor: pointer;
   text-align: center;
+  margin-bottom:20px;
 }
 
 .factoryForm__clear span {
@@ -191,7 +193,7 @@ form {
 .nweet__actions {
   position: absolute;
   right: 10px;
-  top: 10px;
+  top: 19px;
 }
 
 .nweet__actions span {
@@ -202,34 +204,7 @@ form {
   margin-right: 10px;
 }
 
-/* Auth */
 
-.authContainer {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-}
-
-.authBtns {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 320px;
-}
-
-.authBtn {
-  cursor: pointer;
-  border-radius: 20px;
-  border: none;
-  padding: 10px 0px;
-  font-size: 12px;
-  text-align: center;
-  width: 150px;
-  background: white;
-  cursor: pointer;
-}
 
 /* AuthForm */
 

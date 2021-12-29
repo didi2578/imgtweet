@@ -4,7 +4,7 @@ import React from 'react'
 import AuthForm from 'components/AuthForm'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faGoogle } from '@fortawesome/free-brands-svg-icons'
-
+import styled from 'styled-components'
 const Auth = () => {
   const onSocialClick = async (event) => {
     const {
@@ -17,7 +17,7 @@ const Auth = () => {
   }
 
   return (
-    <div className="authContainer">
+    <AuthContainer>
       <FontAwesomeIcon
         icon={faTwitter}
         color={'#04AAFF'}
@@ -25,13 +25,38 @@ const Auth = () => {
         style={{ marginBottom: 30 }}
       />
       <AuthForm />
-      <div className="authBtns">
-        <button name="google" onClick={onSocialClick} className="authBtn">
+      <AuthBtns>
+        <AuthBtn name="google" onClick={onSocialClick}>
           Continue with Google <FontAwesomeIcon icon={faGoogle} />
-        </button>
-      </div>
-    </div>
+        </AuthBtn>
+      </AuthBtns>
+    </AuthContainer>
   )
 }
+const AuthContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  width: 320px;
+`
 
+const AuthBtns = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`
+
+const AuthBtn = styled.button`
+  cursor: pointer;
+  border-radius: 20px;
+  border: none;
+  padding: 10px 0px;
+  font-size: 12px;
+  text-align: center;
+  width: 100%;
+  background: white;
+  cursor: pointer;
+`
 export default Auth
