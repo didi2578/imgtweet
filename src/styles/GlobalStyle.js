@@ -14,11 +14,11 @@ input {
 }
 
 body {
-   background-color: black; 
+   //background-color: black; 
   
   font-size: 14px;
   font-family: 'Noto Sans KR', sans-serif;
-   color: white; 
+  // color: white; 
 }
 
 button {
@@ -64,7 +64,7 @@ form {
   text-align: center;
   color: white;
   border-radius: 20px;
-  background-color: #04aaff;
+  background-color: orange;
   cursor: pointer;
 }
 

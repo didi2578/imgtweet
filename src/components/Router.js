@@ -5,6 +5,7 @@ import Auth from 'routes/Auth'
 import Profile from 'routes/Profile'
 import NavBar from 'components/NavBar'
 import MyTweets from 'routes/MyTweets'
+import ImgTweetFactory from 'components/ImgTweetFactory'
 import styled from 'styled-components'
 
 const AppRouter = ({ isLoggedIn, userObj, refreshUser }) => {
@@ -12,26 +13,30 @@ const AppRouter = ({ isLoggedIn, userObj, refreshUser }) => {
     <StyledDiv>
       <Router>
         {isLoggedIn && <NavBar userObj={userObj} />}
+
         <Routes>
           {isLoggedIn ? (
+            // <NavBar userObj={userObj} />
             <>
-              <Route exact path="/" element={<Home userObj={userObj} />} />
+              <Route path="/" element={<Home userObj={userObj} />} />
               <Route
-                exact
                 path="/profile"
                 element={
                   <Profile userObj={userObj} refreshUser={refreshUser} />
                 }
               />
               <Route
-                exact
                 path="/mytweets"
                 element={<MyTweets userObj={userObj} />}
               />
             </>
           ) : (
-            <Route exact path="/" element={<Auth />} />
+            <Route path="/" element={<Auth />} />
           )}
+          <Route
+            path="/tweetfactory"
+            element={<ImgTweetFactory userObj={userObj} />}
+          />
         </Routes>
       </Router>
     </StyledDiv>

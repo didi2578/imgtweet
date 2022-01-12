@@ -135,6 +135,7 @@ const Profile = ({ userObj, refreshUser }) => {
 const ProfileForm = styled.form`
   padding-bottom: 30px;
   width: 100%;
+
   display: flex;
   flex-direction: column;
 `
