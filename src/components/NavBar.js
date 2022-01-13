@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTwitter } from '@fortawesome/free-brands-svg-icons'
+
 import { faUserCircle, faHome } from '@fortawesome/free-solid-svg-icons'
 import styled from 'styled-components'
 
@@ -38,7 +38,7 @@ const NavBar = ({ userObj }) => {
             {userObj.photoURL ? (
               <img src={userObj.photoURL} alt={userObj.nickName} />
             ) : (
-              <FontAwesomeIcon icon={faUserCircle} size="3x" />
+              <FontAwesomeIcon icon={faUserCircle} size="3x" color={'white'} />
             )}
             {/* <span style={{ marginTop: 10 }}>
               {userObj.displayName

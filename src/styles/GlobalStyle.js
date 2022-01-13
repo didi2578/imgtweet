@@ -224,7 +224,7 @@ form {
 
 .authSubmit {
   text-align: center;
-  background: #04aaff;
+  background: orange;
   color: white;
   margin-top: 10;
 
@@ -242,7 +242,7 @@ margin-top: 10px;
 }
 
 .authSwitch {
-  color: #04aaff;
+  color: orange;
   cursor: pointer;
   margin-top: 10px;
   margin-bottom: 50px;

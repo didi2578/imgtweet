@@ -81,7 +81,12 @@ const ImgTweetFactory = ({ userObj }) => {
           {userObj.photoURL ? (
             <img src={userObj.photoURL} alt={userObj.nickName} />
           ) : (
-            <FontAwesomeIcon icon={faUserCircle} size="3x" />
+            <FontAwesomeIcon
+              icon={faUserCircle}
+              size="3x"
+              color={'orange'}
+              style={{ paddingRight: 5 }}
+            />
           )}
           <FactoryInput
             value={tweet}

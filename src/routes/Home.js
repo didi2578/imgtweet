@@ -56,7 +56,7 @@ const Button = styled.button`
   background-color: orange;
   border: none;
   color: white;
-  position: absolute;
+  position: fixed;
   bottom: 10px;
   right: 10px;
 `

@@ -85,7 +85,7 @@ const Profile = ({ userObj, refreshUser }) => {
                 className="profileImg"
               />
             ) : (
-              <FontAwesomeIcon icon={faUserCircle} size="3x" />
+              <FontAwesomeIcon icon={faUserCircle} size="3x" color={'orange'} />
             )}
             <p>{userObj.displayName}</p>
             <span style={{ color: 'gray', fontWeight: '300', paddingTop: 5 }}>

@@ -62,7 +62,7 @@ const ImgTweet = ({ userObj, isOwner }) => {
             {userObj.profilePhoto ? (
               <img src={userObj.profilePhoto} alt={userObj.nickName} />
             ) : (
-              <FontAwesomeIcon icon={faUserCircle} size="3x" />
+              <FontAwesomeIcon icon={faUserCircle} size="3x" color={'orange'} />
             )}
             <div className="text">
               <h4 style={{ fontSize: '15px', fontWeight: 'bold' }}>
