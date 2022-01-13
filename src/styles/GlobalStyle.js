@@ -218,6 +218,7 @@ form {
   border-radius: 30px;
   background-color: rgba(255, 255, 255, 1);
   margin-bottom: 10px;
+  border: 1px solid orange;
   font-size: 12px;
   color: black;
 }

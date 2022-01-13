@@ -42,6 +42,7 @@ const AuthContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 320px;
+  padding: 10px;
 `
 
 const AuthBtns = styled.div`
