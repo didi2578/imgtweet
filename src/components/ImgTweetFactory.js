@@ -143,8 +143,8 @@ const InputContainer = styled.div`
   width: 100%;
   img {
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 3em;
+    height: 3em;
     margin-right: 10px;
   }
 `
