@@ -4,10 +4,10 @@
 
 ## 📃구현기능
 
-+ 로그인/회원가입 : Firebase Authentication 이용하여 파이어베이스에 회원가입 연동 Google Login 추가
-+ 게시물작성/수정
++ 로그인/회원가입 : Firebase Authentication 이용하여 파이어베이스에 회원가입 연동, Google Login 추가
++ 게시물작성/수정 :  Firestore Database 이용
 + 닉네임 수정 
-+ 이미지 업로드 기능
++ 이미지 업로드 기능 : Firebase Storage 이용
 
 ## 추가 구현 예정
 + 프로필 이미지 수정
