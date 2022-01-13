@@ -129,7 +129,7 @@ const ImgTweetFactory = ({ userObj }) => {
 }
 const FactoryForm = styled.form`
   padding: 10px;
-  width: 100%;
+  max-width: 320px;
 `
 const InputContainer = styled.div`
   display: flex;

@@ -33,7 +33,7 @@ const Home = ({ userObj }) => {
   return (
     <div className="container">
       {/* <ImgTweetFactory userObj={userObj} /> */}
-      <div>
+      <div style={{ position: 'relative' }}>
         {tweets.map((tweet) => (
           <ImgTweet
             key={tweet.id}
@@ -41,10 +41,10 @@ const Home = ({ userObj }) => {
             isOwner={tweet.creatorId === userObj.uid}
           />
         ))}
+        <Button>
+          <Link to="/tweetfactory">+</Link>
+        </Button>
       </div>
-      <Button>
-        <Link to="/tweetfactory">+</Link>
-      </Button>
     </div>
   )
 }
@@ -56,7 +56,7 @@ const Button = styled.button`
   background-color: orange;
   border: none;
   color: white;
-  position: fixed;
+  position: absolute;
   bottom: 10px;
   right: 10px;
 `
