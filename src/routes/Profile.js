@@ -20,7 +20,7 @@ const Profile = ({ userObj, refreshUser }) => {
     navigate('/')
   }
   console.log(userObj)
-  console.log(attachment)
+
   const onChange = (event) => {
     const {
       target: { value },
@@ -88,6 +88,9 @@ const Profile = ({ userObj, refreshUser }) => {
               <FontAwesomeIcon icon={faUserCircle} size="3x" />
             )}
             <p>{userObj.displayName}</p>
+            <span style={{ color: 'gray', fontWeight: '300', paddingTop: 5 }}>
+              @{userObj.email}
+            </span>
           </ProfileImg>
         )}
         {/* <label htmlFor="attach-file" className="factoryInput__label">
@@ -133,7 +136,7 @@ const Profile = ({ userObj, refreshUser }) => {
   )
 }
 const ProfileForm = styled.form`
-  padding-bottom: 30px;
+  padding: 20px;
   width: 100%;
 
   display: flex;
@@ -142,7 +145,8 @@ const ProfileForm = styled.form`
 const ProfileImg = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: baseline;
+
   p {
     margin-top: 10px;
   }

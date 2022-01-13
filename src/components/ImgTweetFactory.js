@@ -6,10 +6,10 @@ import React, { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faPlus,
   faTimes,
   faUserCircle,
   faArrowLeft,
+  faImage,
 } from '@fortawesome/free-solid-svg-icons'
 import styled from 'styled-components'
 
@@ -17,7 +17,7 @@ const ImgTweetFactory = ({ userObj }) => {
   const [tweet, setTweet] = useState('')
   const [attachment, setAttachment] = useState('')
   let navigate = useNavigate()
-  console.log(userObj)
+
   const onSubmit = async (event) => {
     if (tweet === '') {
       return
@@ -71,14 +71,12 @@ const ImgTweetFactory = ({ userObj }) => {
   return (
     <>
       <FactoryForm onSubmit={onSubmit}>
-        <FactoryTweet>
-          <Link to="/">
-            <span>
-              <FontAwesomeIcon icon={faArrowLeft} />
-            </span>
-          </Link>
-          <input type="submit" value="트윗" />
-        </FactoryTweet>
+        <Link to="/">
+          <span style={{ padding: 10, cursor: 'pointer' }}>
+            <FontAwesomeIcon icon={faArrowLeft} />
+          </span>
+        </Link>
+
         <InputContainer>
           {userObj.photoURL ? (
             <img src={userObj.photoURL} alt={userObj.nickName} />
@@ -93,15 +91,15 @@ const ImgTweetFactory = ({ userObj }) => {
             maxLength={120}
           />
         </InputContainer>
-        <label
-          htmlFor="attach-file"
-          style={{ color: 'orange', cursor: 'pointer' }}
-        >
-          <span style={{ marginRight: '10px', fontSize: '12px' }}>
-            Add photos
-          </span>
-          <FontAwesomeIcon icon={faPlus} />
-        </label>
+        <FactoryTweet>
+          <label
+            htmlFor="attach-file"
+            style={{ color: 'orange', cursor: 'pointer' }}
+          >
+            <FontAwesomeIcon icon={faImage} size="2x" />
+          </label>
+          <input type="submit" value="발행" />
+        </FactoryTweet>
         <input
           type="file"
           accept="image/*"
@@ -121,8 +119,7 @@ const ImgTweetFactory = ({ userObj }) => {
               }}
             />
             <div className="factoryForm__clear" onClick={onClearAttachment}>
-              <span>취소</span>
-              <FontAwesomeIcon icon={faTimes} />
+              <FontAwesomeIcon icon={faTimes} size="2x" />
             </div>
           </div>
         )}
@@ -137,7 +134,7 @@ const FactoryForm = styled.form`
 const InputContainer = styled.div`
   display: flex;
   align-items: top;
-  margin: 10px 0;
+  margin: 20px 5px;
   width: 100%;
   img {
     border-radius: 50%;
@@ -148,11 +145,13 @@ const InputContainer = styled.div`
 `
 const FactoryInput = styled.textarea`
   flex-grow: 1;
-  height: 150px;
+  height: 100px;
   border: none;
   padding: 10px 0;
   font-weight: 500;
   font-size: 12px;
+  overflow-y: hidden;
+  resize: none;
   :focus {
     outline: none;
   }
@@ -161,13 +160,10 @@ const FactoryTweet = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  span {
-    padding: 10px;
-    cursor: pointer;
-  }
+  padding: 0 10px;
   input {
     background-color: orange;
-    height: 40px;
+    height: 35px;
     width: 60px;
     padding: 10px 0px;
     text-align: center;
