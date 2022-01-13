@@ -1,6 +1,6 @@
 # ✨React 이미지 첨부 가능 SNS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[ImgTweet 바로가기](https://didi2578.github.io/imgtweet)
 
 ## 구현기능
 
