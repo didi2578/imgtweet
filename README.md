@@ -1,4 +1,4 @@
-# ✨React 이미지 첨부 가능 SNS [모바일 중심]
+# ✨[모바일 중심]React 이미지 첨부 가능 SNS 
 
 [ImgTweet 바로가기](https://didi2578.github.io/imgtweet)
 
