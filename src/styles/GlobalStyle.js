@@ -22,8 +22,7 @@ body {
 }
 
 button {
-  background-color: white;
-  color: black;
+  border:none;
 }
 
 a {
@@ -131,6 +130,7 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 }
 
 .factoryForm__attachment img {
@@ -141,10 +141,13 @@ form {
 }
 
 .factoryForm__clear {
-  color: #04aaff;
+  color: orange;
   cursor: pointer;
   text-align: center;
   margin-bottom:20px;
+  position: absolute;
+    top: -15px;
+    right: 0;
 }
 
 .factoryForm__clear span {
